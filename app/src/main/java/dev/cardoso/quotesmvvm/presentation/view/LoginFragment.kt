@@ -42,10 +42,10 @@ class LoginFragment (): Fragment(){
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.btnLogin.setOnClickListener{
-           // val account = binding.etAccount.text.toString()
-           // val password =binding.etPassword.text.toString()
-            val account = "gustavorm"
-            val password ="gustavorm"
+           val account = binding.etAccount.text.toString()
+           val password =binding.etPassword.text.toString()
+           // val account = "gustavorm"
+            // val password ="gustavorm"
             userViewModel.loginRequest(LoginRequest(account, password))
             getToken()
             observer()
@@ -85,20 +85,15 @@ class LoginFragment (): Fragment(){
         lifecycleScope.launch (Dispatchers.IO){
             userPreferencesRepository.token.collect {
                 token = it
-                Log.w("jdebug", "login t  getoken \n = $it")
-                Log.w("jdebug", "login t var = \n $token")
+                Log.w("gdebug", "login t  getoken \n = $it")
+                Log.w("gdebug", "login t var = \n $token")
             }
         }
     }
 
-    private fun editQuote(){
-        //intent = Intent(this, EditQuoteActivity::class.java )
-        //startActivity(intent)
-    }
 
     private fun showQuotes(){
-        //intent = Intent(this, QuoteListActivity::class.java )
-       // startActivity(intent)
+
     }
 
     override fun onDestroyView() {

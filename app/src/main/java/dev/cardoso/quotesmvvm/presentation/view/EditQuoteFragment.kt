@@ -118,7 +118,7 @@ class EditQuoteFragment : Fragment() {
             }
             else{
                 Toast.makeText(requireContext(), "Editing Quote ...", Toast.LENGTH_SHORT).show()
-                Log.w("josemdebug", "${binding.etEditQuote.text.toString()}, ${binding.etEditAuthor.text.toString()}")
+                Log.w("debug", "${binding.etEditQuote.text.toString()}, ${binding.etEditAuthor.text.toString()}")
 
                 editQuoteViewModel.editQuote("Bearer $token", QuoteRequest(binding.etEditQuote.text.toString(), binding.etEditAuthor.text.toString()), quoteId.toString())
                 lifecycleScope.launch(){

@@ -64,7 +64,7 @@ class AddQuoteFragment : Fragment() {
         _binding = null
     }
 
-    // methods
+
 
     private fun getToken(){
         lifecycleScope.launch (Dispatchers.IO){
@@ -77,7 +77,6 @@ class AddQuoteFragment : Fragment() {
     private fun setBtnCancelListener() {
         binding.btnCancelAdd.setOnClickListener{
             this.findNavController().popBackStack()
-//            this.findNavController().navigate(R.id.action_addQuoteFragment_to_nav_home)
         }
     }
 
@@ -113,8 +112,8 @@ class AddQuoteFragment : Fragment() {
             }
             else{
                 Toast.makeText(requireContext(), "Saving Quote ...", Toast.LENGTH_SHORT).show()
-                Log.w("josemdebug", "${binding.etQuote.text.toString()}, ${binding.etAuthor.text.toString()}")
-                Log.w("josemdebug", "${lastIndex.toString()}")
+                Log.w("debug", "${binding.etQuote.text.toString()}, ${binding.etAuthor.text.toString()}")
+                Log.w("debug", "${lastIndex.toString()}")
 
                 addQuoteViewModel.addQuote("Bearer $token", QuoteRequest(binding.etQuote.text.toString(), binding.etAuthor.text.toString(), lastIndex))
                 lifecycleScope.launch(){
