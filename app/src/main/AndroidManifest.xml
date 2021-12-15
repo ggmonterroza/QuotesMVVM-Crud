@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/QuoteAppTheme"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".presentation.view.LoginActivity"
             android:exported="true">
